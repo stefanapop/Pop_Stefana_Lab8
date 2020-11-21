@@ -15,5 +15,11 @@ namespace Pop_Stefana_Lab8.Data
         }
 
         public DbSet<Pop_Stefana_Lab8.Models.Book> Book { get; set; }
+
+        public DbSet<Pop_Stefana_Lab8.Models.Publisher> Publisher { get; set; }
+
+        public DbSet<Pop_Stefana_Lab8.Models.BookCategory> BookCategory { get; set; }
+
+        public DbSet<Pop_Stefana_Lab8.Models.Category> Category { get; set; }
     }
 }
