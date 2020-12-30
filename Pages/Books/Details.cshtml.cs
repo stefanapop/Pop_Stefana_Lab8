@@ -28,7 +28,11 @@ namespace Pop_Stefana_Lab8.Pages.Books
                 return NotFound();
             }
 
-            Book = await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
+            Book = await _context.Book
+                .Include(b => b.Publisher)
+                .Include(b => b.BookCategories)
+                .ThenInclude(b => b.Category)
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Book == null)
             {
