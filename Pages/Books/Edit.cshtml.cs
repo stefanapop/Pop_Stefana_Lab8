@@ -68,7 +68,7 @@ namespace Pop_Stefana_Lab8.Pages.Books
             if (await TryUpdateModelAsync<Book>(
             bookToUpdate, "Book",
             i => i.Title, i => i.Author,
-            i => i.Price, i => i.PublishingDate, i => i.Publisher))
+            i => i.Price, i => i.PublishingDate, i => i.PublisherID))
             {
                 UpdateBookCategories(_context, selectedCategories, bookToUpdate);
                 await _context.SaveChangesAsync();
